@@ -28,10 +28,11 @@ const Pagination = ({
   }
 
   return (
-    <div className="pagination">
-      <button onClick={() => setCurrentPage(1)}>👈</button>
+    <div className="pagination-container">
+      <div className="pagination">
+      <button onClick={() => setCurrentPage(1)}>⬅️</button>
 
-      <button
+      <button style={{color:"blue", width:"100px", borderRadius:"10px"}}
         onClick={() => setCurrentPage(currentPage - 1)}
         disabled={currentPage === 1}
       >
@@ -48,14 +49,15 @@ const Pagination = ({
         </button>
       ))}
 
-      <button className="next-button"
+      <button style={{ width:"50px", borderRadius:"10px"}}
         onClick={() => setCurrentPage(currentPage + 1)}
         disabled={currentPage === totalPages}
       >
         Next
       </button>
 
-      <button onClick={() => setCurrentPage(totalPages)}>👉</button>
+      <button onClick={() => setCurrentPage(totalPages)}>➡️</button>
+      </div>
     </div>
   );
 };

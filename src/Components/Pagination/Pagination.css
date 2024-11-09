@@ -1,33 +1,38 @@
+.pagination-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1rem;
+}
 .pagination {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 1rem;
+  display: flex;
+  border-radius: 20px;
+  background-color: rgb(243, 244, 246);
+  padding: 6px;
+  width: 34%;
 }
 
 .pagination button {
-    width: 40px;
-    height: 40px;
-    font-family: inherit;
-    font-weight: 600;
-    font-size: 16px;
-    margin: 0 10px;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    background: transparent;
-    color: #211f1f;
-    border-color: #eee;
+  width: 40px;
+  height: 40px;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 16px;
+  margin: 0 10px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: transparent;
+  color: #211f1f;
+  border-color: #eee;
 }
 
 .pagination button.active {
-    font-weight: 900;
-    border-color: #101010;
-    color: rgb(209,213,219);
-    color: #101010;
+  font-weight: 700;
+  color: #101010;
+  background-color: rgb(209, 213, 219);
 }
-
-
 
 /* .pagination {
     display: flex;
