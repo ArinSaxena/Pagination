@@ -23,6 +23,33 @@
 .pagination button.active {
     font-weight: 900;
     border-color: #101010;
-    background: #ffe400;
+    color: rgb(209,213,219);
     color: #101010;
 }
+
+
+
+/* .pagination {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .pagination button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: blue;
+  }
+  
+  .pagination button.active {
+    font-weight: bold;
+    color: rgb(209,213,219);
+  }
+  
+  .pagination button:disabled {
+    color: grey;
+    cursor: not-allowed;
+  }
+   */

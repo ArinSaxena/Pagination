@@ -1,32 +1,61 @@
 import { useState } from "react";
 import "Components/Pagination/Pagination.css";
 
-const Pagination = ({ totalItems, itemsPerPage, setCurrentPage }) => {
-//   const [currentPage, setCurrentPage] = useState(1);
+const Pagination = ({
+  totalPages,
+  totalItems,
+  itemsPerPage,
+  currentPage,
+  setCurrentPage,
+}) => {
+  const maxDisplayPages = 5;
+  //  start and end pages for display range
+  let startPage = Math.max(1, currentPage - Math.floor(maxDisplayPages / 2));
+  let endPage = startPage + maxDisplayPages - 1;
 
-//   const indexOfLastItem = currentPage * itemsPerPage;
-//   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-//   const currentItems = items.slice(indexOfFirstItem, indexOfLastItem);
-
-//   console.log(currentItems);
+  if (endPage > totalPages) {
+    endPage = totalPages;
+    startPage = Math.max(1, endPage - maxDisplayPages + 1);
+  }
 
   const pageNumber = [];
-  for (let i = 1; i <= Math.ceil(totalItems / itemsPerPage); i++) {
+  // for (let i = 1; i <= Math.ceil(totalItems / itemsPerPage); i++) {  //for total pages
+  //   pageNumber.push(i);
+  // }
+
+  for (let i = startPage; i <= endPage; i++) {
     pageNumber.push(i);
   }
 
   return (
     <div className="pagination">
-      {/* <ul>
-        {currentItems.map((item, index) => {
-          return <li key={index}>{item}</li>;
-        })}
-      </ul> */}
-      {pageNumber.map((number,index) => {
-        return (
-          <button key={index} onClick={() => setCurrentPage(number)}>{number}</button>
-        );
-      })}
+      <button onClick={() => setCurrentPage(1)}>👈</button>
+
+      <button
+        onClick={() => setCurrentPage(currentPage - 1)}
+        disabled={currentPage === 1}
+      >
+        Previous
+      </button>
+
+      {pageNumber.map((number) => (
+        <button
+          key={number}
+          onClick={() => setCurrentPage(number)}
+          className={number === currentPage ? "active" : ""}
+        >
+          {number}
+        </button>
+      ))}
+
+      <button className="next-button"
+        onClick={() => setCurrentPage(currentPage + 1)}
+        disabled={currentPage === totalPages}
+      >
+        Next
+      </button>
+
+      <button onClick={() => setCurrentPage(totalPages)}>👉</button>
     </div>
   );
 };
