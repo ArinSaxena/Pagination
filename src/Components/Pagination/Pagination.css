@@ -27,13 +27,16 @@
   color: #211f1f;
   border-color: #eee;
 }
-.previous-btn {
-  /* width: 100px; */
+/* .previous-btn {
+  width: 100px;
   border-radius: "10px";
   color: "black";
-}
-.next-btn {
-  width: 50px;
+} */
+input [type="button"] {
+  width: 200px;
+  border-radius: "10px";
+  border: none;
+  color: "black";
 }
 
 .pagination button.active {
@@ -45,4 +48,3 @@
   color: grey;
   /* cursor: not-allowed; */
 }
-
