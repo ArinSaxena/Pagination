@@ -32,8 +32,9 @@
   border-radius: "10px";
   color: "black";
 } */
-input [type="button"] {
-  width: 200px;
+input[type="button"] {
+  width: 70px;
+  font-size: 16px;
   border-radius: "10px";
   border: none;
   color: "black";

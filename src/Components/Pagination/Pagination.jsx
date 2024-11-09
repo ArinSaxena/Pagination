@@ -43,7 +43,6 @@ const Pagination = ({
         </button> */}
         <input
           type="button"
-          className="previous-btn"
           value="Previous"
           onClick={() => setCurrentPage(currentPage - 1)}
           disabled={currentPage === 1}
@@ -59,13 +58,19 @@ const Pagination = ({
           </button>
         ))}
 
-        <button
+        {/* <button
           className="next-btn"
           onClick={() => setCurrentPage(currentPage + 1)}
           disabled={currentPage === totalPages}
         >
           Next
-        </button>
+        </button> */}
+        <input
+          type="button"
+          value="Next"
+          onClick={() => setCurrentPage(currentPage + 1)}
+          disabled={currentPage === totalPages}
+        />
 
         <button onClick={() => setCurrentPage(totalPages)}>➡️</button>
       </div>
